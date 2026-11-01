@@ -516,90 +516,192 @@ form.lead button[disabled]{opacity:.6;cursor:wait}
   .calc .big{font-size:56px}.kv b{font-size:16px}.teaser>div{padding:26px 20px}
   .statement{font-size:clamp(22px,6.4vw,28px)}.faq summary{font-size:16px}}
 @media (max-width:360px){.stats{grid-template-columns:minmax(0,1fr)}.stat+.stat{padding-left:0;border-left:0;border-top:1px solid var(--line)}.specs b{font-size:13px}.leader{grid-template-columns:minmax(0,1fr)}}
+
+/* ===== v3: official logo ===== */
+.brand .mk{width:50px;height:50px;flex:none;display:block;transition:transform .7s var(--ease);filter:drop-shadow(0 6px 10px rgba(0,0,0,.6))}
+.brand:hover .mk{transform:perspective(500px) rotateY(180deg)}
+.brand .wm{height:22px}
+.nav.solid .brand .mk{width:44px;height:44px}
+@media (max-width:560px){.brand .mk{width:40px;height:40px}.brand .wm{height:16px}}
+@media (max-width:340px){.brand .wm{display:none}}
+.hero .crest{width:min(340px,100%)}
+.hero .crest img.full{position:static;inset:auto;width:100%;height:auto;animation:glint 7s ease-in-out infinite}
+@media (max-width:900px){.hero .crest{width:170px}}
+footer .fwm{width:min(300px,100%)}
+
+/* ===== project images ===== */
+.card .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.card:hover .img img{transform:scale(1.06)}
+.card .img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(8,7,6,.55));pointer-events:none}
+.card .price strong{font-size:18px}
+.card .from{display:block;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:400}
+.pm .art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pm .in{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.pm .det{max-height:calc(100vh - 48px);overflow:auto}
+.pm .dev{margin-top:-8px}
+.typ{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:4px}
+.typ th{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:500;text-align:left;padding:8px 8px 8px 0;border-bottom:1px solid var(--gold-lo)}
+.typ td{padding:10px 8px 10px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.typ td:last-child,.typ th:last-child{text-align:right;padding-right:0;color:var(--gold-hi);font-weight:500;white-space:nowrap}
+.typ td:first-child{color:var(--cream)}
+.pm h4{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);font-weight:500;margin-top:8px}
+@media (max-width:820px){.pm .in{grid-template-columns:1fr}.pm .det{max-height:none}}
+@media (max-width:420px){.typ{font-size:12.5px}.typ td:last-child{white-space:normal}}
+
+/* ===== filters v3 ===== */
+.filters{grid-template-columns:auto repeat(4,minmax(0,170px)) 1fr}
+@media (max-width:1160px){.filters{grid-template-columns:repeat(4,minmax(0,1fr))}.filters .tabs{grid-column:1/-1}.count{grid-column:1/-1;justify-self:start}}
+@media (max-width:640px){.filters{grid-template-columns:1fr 1fr}}
+
+/* ===== services ===== */
+.svc{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;perspective:1200px}
+.svc article{position:relative;padding:34px 28px 32px;border:1px solid var(--line);border-radius:14px;background:linear-gradient(180deg,var(--ink-2),var(--ink));display:flex;flex-direction:column;gap:14px;transition:transform .45s var(--ease),box-shadow .45s,border-color .4s;overflow:hidden}
+.svc article::before{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:var(--goldgrad);transform:scaleX(0);transform-origin:left;transition:transform .6s var(--ease)}
+.svc article:hover{transform:translateY(-8px) rotateX(4deg);border-color:var(--gold-lo);box-shadow:0 26px 50px -24px #000,inset 0 1px 0 rgba(246,226,166,.15)}
+.svc article:hover::before{transform:scaleX(1)}
+.svc .ic{width:54px;height:54px;border-radius:12px;display:grid;place-items:center;color:#120e06;background:var(--goldgrad);box-shadow:inset 0 1px 0 rgba(255,246,214,.6),0 4px 0 #7a5a24}
+.svc h3{font-size:21px;font-weight:500;letter-spacing:-.01em}
+.svc p{color:var(--muted);font-size:14.5px}
+.svc-foot{margin-top:28px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;align-items:center;padding:22px 26px;border:1px solid var(--line);border-radius:12px;background:var(--ink-2)}
+.svc-foot b{font-weight:500;color:var(--gold-hi)}
+@media (max-width:1060px){.svc{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.svc{grid-template-columns:1fr}}
+
+/* ===== network & areas ===== */
+.net{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px}
+.net span{display:flex;align-items:center;gap:12px;padding:16px 18px;border:1px solid var(--line);border-radius:10px;background:var(--ink-2);font-size:14.5px;transition:transform .3s var(--ease),border-color .3s,box-shadow .3s;min-width:0}
+.net span::before{content:"";width:8px;height:8px;border:1px solid var(--gold);transform:rotate(45deg);flex:none}
+.net span:hover{transform:translateY(-3px);border-color:var(--gold-lo);box-shadow:0 4px 0 rgba(154,117,51,.45)}
+.areas{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px}
+.areas h4{font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:14px}
+.chips2{display:flex;flex-wrap:wrap;gap:8px}
+.chips2 span{padding:9px 14px;border:1px solid var(--line-2);border-radius:999px;font-size:13.5px;color:var(--cream);transition:all .3s}
+.chips2 span:hover{border-color:var(--gold);color:var(--gold-hi);transform:translateY(-2px)}
+@media (max-width:760px){.areas{grid-template-columns:1fr}}
+
+/* ===== about v3 ===== */
+.vm{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;perspective:1200px}
+.vm article{padding:clamp(28px,4vw,44px);border:1px solid var(--line);border-radius:14px;background:radial-gradient(120% 120% at 100% 0,rgba(212,173,91,.10),transparent 60%),var(--ink-2);transition:transform .45s var(--ease),box-shadow .45s}
+.vm article:hover{transform:translateY(-6px) rotateX(3deg);box-shadow:0 24px 44px -22px #000}
+.vm h3{font-size:clamp(24px,2.4vw,32px);font-weight:300;margin:14px 0 14px}
+.vm h3 b{color:var(--gold-hi)}
+.vm p{color:var(--muted)}
+@media (max-width:760px){.vm{grid-template-columns:1fr}}
+.quote{position:relative;padding:clamp(32px,5vw,64px);border-radius:16px;border:1px solid var(--gold-lo);background:radial-gradient(100% 140% at 0 0,rgba(212,173,91,.12),transparent 60%),var(--ink-2);text-align:center}
+.quote p.q{font-size:clamp(22px,2.8vw,36px);font-weight:200;line-height:1.35;max-width:30ch;margin:0 auto;letter-spacing:-.01em}
+.quote p.q b{font-weight:500;color:var(--gold-hi)}
+.quote .c{margin-top:26px;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+.quote .c2{margin-top:10px;font-size:15px;color:var(--muted)}
+
+/* ===== WhatsApp chooser ===== */
+.wa{border:0;cursor:pointer;font:inherit}
+.wam{position:fixed;z-index:75;right:calc(env(safe-area-inset-right,0px) + 20px);bottom:calc(env(safe-area-inset-bottom,0px) + 86px);width:min(320px,calc(100vw - 40px));padding:16px;border-radius:14px;border:1px solid var(--gold-lo);background:linear-gradient(180deg,#1c1710,#0b0907);box-shadow:inset 0 1px 0 rgba(246,226,166,.25),0 24px 50px -16px #000;transform-origin:100% 100%;animation:pop .35s var(--ease)}
+.wam p{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.wam a{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:10px;text-decoration:none;border:1px solid var(--line-2);margin-top:8px;transition:all .25s}
+.wam a:hover{border-color:var(--gold);background:rgba(212,173,91,.08);transform:translateY(-2px)}
+.wam a i{width:32px;height:32px;border-radius:8px;display:grid;place-items:center;background:var(--goldgrad);color:#120e06;flex:none}
+.wam a span{display:grid;font-size:15px;font-variant-numeric:tabular-nums}
+.wam a small{font-size:11px;color:var(--muted);letter-spacing:.08em}
+.wam .x2{position:absolute;top:10px;right:10px;background:none;border:0;color:var(--muted);cursor:pointer;width:32px;height:32px}
+.disc{font-size:12px;color:var(--dim);line-height:1.6;margin-top:26px;max-width:110ch}
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "RealEstateAgent", "name": "NSu Ventures Pvt. Ltd.", "alternateName": "NS Ventures", "slogan": "Your Vision, Our Expertise", "url": "https://www.nsuventures.in/", "logo": "https://www.nsuventures.in/assets/logo-full.png", "email": "contact@nsuventures.in", "telephone": ["+91-9503599600", "+91-8484900467"], "sameAs": ["https://www.instagram.com/nsuventures/"], "address": {"@type": "PostalAddress", "streetAddress": "Office No. 303, Gera's Imperium Alpha, Grant Road, near EON IT Park, Kharadi", "addressLocality": "Pune", "addressRegion": "MH", "postalCode": "411014", "addressCountry": "IN"}, "founder": [{"@type": "Person", "name": "Niraj Pawde"}, {"@type": "Person", "name": "Suraj Pawde"}], "openingHours": "Mo-Sa 10:00-19:00", "areaServed": "Pune"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "RealEstateAgent", "name": "NSu Ventures Pvt. Ltd.", "alternateName": "NS Ventures", "slogan": "Your Vision, Our Expertise", "url": "https://www.nsuventures.in/", "logo": "https://www.nsuventures.in/assets/nl-full.png", "email": "contact@nsuventures.in", "telephone": ["+91-9503599600", "+91-8484900467"], "sameAs": ["https://www.instagram.com/nsuventures/"], "address": {"@type": "PostalAddress", "streetAddress": "Office No. 303, Gera's Imperium Alpha, Grant Road, near EON IT Park, Kharadi", "addressLocality": "Pune", "addressRegion": "MH", "postalCode": "411014", "addressCountry": "IN"}, "founder": [{"@type": "Person", "name": "Niraj Pawde"}, {"@type": "Person", "name": "Suraj Pawde"}], "openingHours": "Tu-Su 10:00-19:00", "areaServed": "Pune", "description": "Real estate marketing professionals offering residential and commercial property advisory, home loan assistance, interior design and investment guidance in Pune."}</script>
 </head><body>
 <header class="nav" id="nav"><div class="wrap"><div class="bar">
-  <a class="brand" href="index.html" aria-label="NSu Ventures Pvt Ltd, home"><span class="seal"><img src="assets/logo-mono.png" alt=""></span><span><img class="wm" src="assets/logo-word.png" alt="NSu Ventures Pvt Ltd" width="300" height="26"><span class="tg">Your Vision, Our Expertise</span></span></a>
+  <a class="brand" href="index.html" aria-label="NSu Ventures Pvt Ltd, home"><img class="mk" src="assets/nl-mark.png" alt="" width="50" height="50"><span><img class="wm" src="assets/nl-wordonly.png" alt="NSu Ventures Pvt Ltd" width="250" height="22"><span class="tg">Your Vision, Our Expertise</span></span></a>
   <ul class="menu"><li><a href="index.html">Home</a></li><li><a href="about.html" aria-current="page">About</a></li><li><a href="properties.html">Properties</a></li><li><a href="pre-leased.html">Pre-Leased</a></li><li><a href="contact.html">Contact</a></li></ul>
-  <a class="btn" href="contact.html#book">Book appointment</a>
+  <a class="btn" href="contact.html#book">Book a site visit</a>
   <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><svg width="20" height="12" viewBox="0 0 20 12" fill="none"><path d="M0 1h20M6 11h14" stroke="currentColor" stroke-width="1.4"/></svg></button>
 </div></div></header>
 <nav class="drawer" id="drawer" aria-label="Main menu">
   <button class="x" id="drawer-x" aria-label="Close menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M1 1l14 14M15 1L1 15" stroke="currentColor" stroke-width="1.4"/></svg></button>
   <a class="big" href="index.html">Home<span>→</span></a><a class="big" href="about.html" aria-current="page">About<span>→</span></a><a class="big" href="properties.html">Properties<span>→</span></a><a class="big" href="pre-leased.html">Pre-Leased<span>→</span></a><a class="big" href="contact.html">Contact<span>→</span></a>
-  <a class="btn" href="contact.html#book" style="margin-top:24px">Book appointment <svg width="16" height="10" viewBox="0 0 16 10" fill="none" aria-hidden="true"><path d="M0 5h15M11 1l4 4-4 4" stroke="currentColor" stroke-width="1.3"/></svg></a>
-  <div class="foot"><span>+91 95035 99600 · +91 84849 00467</span><span>contact@nsuventures.in</span></div>
+  <a class="btn" href="contact.html#book" style="margin-top:24px">Book a site visit <svg width="16" height="10" viewBox="0 0 16 10" fill="none" aria-hidden="true"><path d="M0 5h15M11 1l4 4-4 4" stroke="currentColor" stroke-width="1.3"/></svg></a>
+  <div class="foot"><span>+91 95035 99600 · +91 84849 00467</span><span>contact@nsuventures.in</span><span>Tue – Sun · Monday weekly off</span></div>
 </nav><main data-page="about">
 <section class="phead"><div class="shard" aria-hidden="true"></div><div class="shard2" aria-hidden="true"></div>
-<div class="wrap load"><div class="crumb"><a href="index.html">Home</a><span>/</span><span>About</span></div><h1>Your vision. <b>Our expertise.</b></h1><p>NSu Ventures Pvt. Ltd. (formerly NS Ventures) is a real estate company in Kharadi, Pune, specialising in residential, commercial and pre-leased property.</p></div></section>
+<div class="wrap load"><div class="crumb"><a href="index.html">Home</a><span>/</span><span>About</span></div><h1>Your vision. <b>Our expertise.</b></h1><p>We are real estate marketing professionals driven by a clear vision: to make property buying a transparent, rewarding and trustworthy experience for every customer.</p></div></section>
 <section class="sec"><div class="wrap split">
- <div class="frame reveal"><div class="a"></div><div class="b" id="about-art"></div></div>
- <div class="copy reveal"><div class="eyebrow">Who we are</div><h2>Helping Pune buy <b>with confidence.</b></h2>
- <p>NSu Ventures Pvt. Ltd. specialises in providing the best possible service to property buyers across Pune. We offer a wide range of residential, pre-leased and commercial properties to help our clients find their dream home or the right investment.</p>
- <p>With a strong presence in the Pune market, we focus on exceptional customer satisfaction and a seamless purchasing process, from the first site visit to the day you get the keys.</p>
- <p>Formerly known as NS Ventures, the company is led by its founding directors, Niraj Pawde and Suraj Pawde, from our office at Gera's Imperium Alpha, near EON IT Park.</p></div>
+ <div class="frame reveal"><div class="a"></div><div class="b"><img src="assets/projects/punya.jpg" alt="Residential towers in Pune" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy"></div></div>
+ <div class="copy reveal"><div class="eyebrow">Who we are</div><h2>More than marketing. <b>Meaningful connections.</b></h2>
+ <p>Our goal is not just to market real estate projects, but to create meaningful connections between reputed developers and homebuyers, while helping investors identify the right opportunities.</p>
+ <p>We strongly believe that buying a home or making a property investment is one of life's most important decisions. Our mission is to guide every client with the right information, professional assistance and honest advice, so they can make confident decisions that align with their dreams, needs and financial goals.</p>
+ <p>NSu Ventures Pvt. Ltd. (formerly NS Ventures) is led by its directors, Niraj Pawde and Suraj Pawde, from our office at Gera's Imperium Alpha, near EON IT Park, Kharadi.</p></div>
 </div></section>
 
 <section class="sec tight"><div class="wrap">
- <div class="sec-head reveal"><div><div class="eyebrow">What we stand for</div><h2>Three <b>commitments</b> to every client.</h2></div></div>
- <div class="values">
-  <div class="value reveal"><span class="n">01</span><h3>Diligence</h3><p>MahaRERA registration, title, approvals and, for pre-leased assets, the lease itself are checked before a property reaches your shortlist.</p></div>
-  <div class="value reveal"><span class="n">02</span><h3>Transparency</h3><p>Clear information on pricing, payment plans and possession timelines, so you can compare options honestly.</p></div>
-  <div class="value reveal"><span class="n">03</span><h3>A seamless process</h3><p>Site visits, negotiation, home loans and registration handled by one team, so buying feels simple.</p></div>
+ <div class="vm">
+  <article class="reveal"><div class="eyebrow">Our vision</div><h3>A trusted and <b>respected name</b> in real estate.</h3><p>To become a trusted and respected name in the real estate industry by delivering excellence, building long-term relationships and creating value for every client.</p></article>
+  <article class="reveal"><div class="eyebrow">Our mission</div><h3>Smooth, transparent and <b>rewarding</b>.</h3><p>To provide the best real estate marketing services, genuine property guidance and investment insights, while making the entire property-buying journey smooth, transparent and rewarding.</p></article>
  </div>
+</div></section>
+
+<section class="sec tight"><div class="wrap">
+ <div class="sec-head reveal"><div><div class="eyebrow">Our goals & commitments</div><h2>What we promise <b>every client.</b></h2></div></div>
+ <div class="checks">
+  <div class="reveal"><h4>Dream homes for families</h4><p>Help families find the home that fits their life, today and for years to come.</p></div>
+  <div class="reveal"><h4>Right opportunities for investors</h4><p>Guide investors towards suitable property opportunities with real growth potential.</p></div>
+  <div class="reveal"><h4>Long-lasting relationships</h4><p>Build strong relationships with developers and clients that go beyond a single deal.</p></div>
+  <div class="reveal"><h4>Transparent service</h4><p>Deliver professional, transparent and customer-focused service at every step.</p></div>
+  <div class="reveal"><h4>Quality first</h4><p>Focus on quality projects, strategic marketing and genuine opportunities.</p></div>
+  <div class="reveal"><h4>A confident journey</h4><p>Make every client's property journey a confident and satisfying experience.</p></div>
+ </div>
+</div></section>
+
+<section class="sec tight"><div class="wrap">
+ <div class="quote reveal"><div class="eyebrow" style="justify-content:center">Our philosophy</div>
+  <p class="q" style="margin-top:22px">We believe real estate is not just about buying and selling properties. <b>It is about trust, relationships, opportunities and securing a better future.</b></p>
+  <div class="c">Our commitment</div><p class="c2">Your Dream Home, Your Smart Investment, Our Responsibility.</p></div>
 </div></section>
 
 <section class="sec tight" id="leadership"><div class="wrap">
  <div class="sec-head reveal"><div><div class="eyebrow">Leadership</div><h2>Meet the <b>directors.</b></h2></div><p>Every client is personally looked after by a director of the company.</p></div>
  <div class="leaders">
 <article class="leader reveal"><div class="ph" aria-hidden="true">NP</div><div><h3>Niraj Pawde</h3><div class="role">Managing Director</div>
-<p>Leads residential and investor advisory, guiding families and NRIs through East Pune's new launches and resale market.</p><div class="mail">niraj.pawde@nsuventures.in</div></div></article>
+<p>Leads residential and investor advisory, guiding families and NRIs to the right new projects across Pune.</p><div class="mail">niraj.pawde@nsuventures.in</div></div></article>
 <article class="leader reveal"><div class="ph" aria-hidden="true">SP</div><div><h3>Suraj Pawde</h3><div class="role">Managing Director</div>
-<p>Leads commercial and pre-leased transactions, from office leasing to income-producing assets for HNI portfolios.</p><div class="mail">suraj.pawde@nsuventures.in</div></div></article>
+<p>Leads commercial and pre-leased advisory, developer partnerships and investment opportunities for HNI portfolios.</p><div class="mail">suraj.pawde@nsuventures.in</div></div></article>
 </div>
 </div></section>
 
 <section class="sec tight"><div class="wrap">
- <div class="sec-head reveal"><div><div class="eyebrow">Where we work</div><h2>Based in <b>Kharadi.</b></h2></div>
- <p>Our office is near EON IT Park, at the centre of Pune's eastern growth corridor.</p></div>
- <div class="mapgrid"><div class="mapbox reveal"><svg viewBox="0 0 600 460" role="img" aria-label="Schematic map of East Pune micro-markets around Kharadi">
-<rect width="600" height="460" fill="#100e0b"/>
-<g stroke="#221d15" stroke-width="1"><path d="M0 60H600M0 120H600M0 180H600M0 240H600M0 300H600M0 360H600M0 420H600"/><path d="M60 0V460M120 0V460M180 0V460M240 0V460M300 0V460M360 0V460M420 0V460M480 0V460M540 0V460"/></g>
-<path d="M-10 300 C 90 280, 150 330, 230 300 S 360 250, 420 280 S 540 330, 610 300" fill="none" stroke="#2f4a58" stroke-width="12" opacity=".6"/>
-<text x="20" y="330" fill="#5f7a88" font-family="Poppins" font-size="10" letter-spacing="2.5">MULA-MUTHA RIVER</text>
-<path d="M40 120 L 300 200 L 560 150" fill="none" stroke="#9a7533" stroke-width="2" stroke-dasharray="6 6"/>
-<text x="340" y="150" fill="#9a7533" font-family="Poppins" font-size="9.5" letter-spacing="2.5" transform="rotate(-10 340 150)">PUNE–NAGAR ROAD</text>
-<g font-family="Poppins" font-size="12.5">
-<circle cx="190" cy="95" r="8" fill="none" stroke="#f3dc9b" stroke-width="1.5"/><path d="M186 95h8M190 91v8" stroke="#f3dc9b"/><text x="206" y="100" fill="#f3ecdc">Pune Airport</text>
-<circle cx="170" cy="200" r="5" fill="#d4ad5b"/><text x="70" y="226" fill="#a39a86">Viman Nagar</text>
-<circle cx="110" cy="350" r="5" fill="#d4ad5b"/><text x="40" y="378" fill="#a39a86">Koregaon Park</text>
-<circle cx="300" cy="230" r="22" fill="#d4ad5b" opacity=".12"><animate attributeName="r" values="12;26;12" dur="3.2s" repeatCount="indefinite"/></circle><circle cx="300" cy="230" r="8" fill="#f3dc9b"/>
-<text x="320" y="236" fill="#f3dc9b" font-family="Cinzel" font-size="16" letter-spacing="2.5">KHARADI</text>
-<text x="320" y="254" fill="#a39a86" font-size="10.5">NSu Ventures · near EON IT Park</text>
-<rect x="352" y="272" width="12" height="12" fill="none" stroke="#d4ad5b"/><text x="371" y="283" fill="#a39a86">EON IT Park</text>
-<rect x="262" y="272" width="12" height="12" fill="none" stroke="#d4ad5b"/><text x="170" y="283" fill="#a39a86">WTC Pune</text>
-<circle cx="520" cy="150" r="5" fill="#d4ad5b"/><text x="494" y="132" fill="#a39a86">Wagholi</text>
-<circle cx="360" cy="400" r="5" fill="#d4ad5b"/><text x="378" y="405" fill="#a39a86">Hadapsar · Magarpatta</text>
-</g><text x="20" y="444" fill="#4d4637" font-family="Poppins" font-size="9.5" letter-spacing="2">SCHEMATIC · NOT TO SCALE</text></svg></div>
- <div class="points reveal">
-  <div><h4>Kharadi</h4><span>Home market</span><p>IT parks, EON and WTC on the doorstep, with strong demand for homes and office space.</p></div>
-  <div><h4>Viman Nagar</h4><span>Airport side</span><p>An established neighbourhood with premium resale homes and high-street retail.</p></div>
-  <div><h4>Wagholi</h4><span>Growth corridor</span><p>Larger homes at entry pricing along the Nagar Road.</p></div>
-  <div><h4>Koregaon Park · Hadapsar</h4><span>Premium & mixed-use</span><p>Luxury residences, Magarpatta offices and leased retail.</p></div>
- </div></div>
+ <div class="sec-head reveal"><div><div class="eyebrow">Our services</div><h2>One company. <b>Multiple solutions.</b></h2></div></div>
+ <div class="svc">
+  <article class="reveal"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg></span><h3>Residential & Commercial Property Advisory</h3><p>Helping you explore residential and commercial properties that fit your requirements, preferences and budget.</p></article>
+  <article class="reveal"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M7 15h4"/></svg></span><h3>Home Loan Assistance</h3><p>Connecting you with suitable home loan options and supporting you through the application and documentation.</p></article>
+  <article class="reveal"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 18v-5a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v5M2 18h20M6 18v2M18 18v2M7 10V6h10v4"/></svg></span><h3>Interior Design & Home Décor</h3><p>Turning houses into beautiful homes with interior design tailored to your lifestyle, taste and budget.</p></article>
+  <article class="reveal"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 17l6-6 4 4 8-8M15 7h6v6"/></svg></span><h3>Real Estate Investment Guidance</h3><p>Guiding buyers and investors to opportunities with strong locations, growth potential and long-term value.</p></article>
+</div>
+<div class="svc-foot reveal"><span>From finding your dream property to financing and designing your home, we support you at every step.</span><b>One Company. Multiple Solutions.</b></div>
 </div></section>
-<section class="band"><div class="wrap"><h2>Let's talk about <b>your next property.</b></h2><a class="btn dark" href="contact.html#book">Book appointment <svg width="16" height="10" viewBox="0 0 16 10" fill="none" aria-hidden="true"><path d="M0 5h15M11 1l4 4-4 4" stroke="currentColor" stroke-width="1.3"/></svg></a></div></section>
+
+<section class="sec tight" id="network"><div class="wrap">
+ <div class="sec-head reveal"><div><div class="eyebrow">Our network</div><h2>Builders & developers <b>we work with</b></h2></div><p>We work with 29 of Pune's leading builders and developers.</p></div>
+ <div class="net"><span class="reveal">Panchshil Realty</span><span class="reveal">Tribeca Developers</span><span class="reveal">Hiranandani Group</span><span class="reveal">Kalpataru Group</span><span class="reveal">Lodha Developers</span><span class="reveal">Puravankara</span><span class="reveal">Godrej Properties</span><span class="reveal">Mahindra Lifespaces</span><span class="reveal">Gera Developments</span><span class="reveal">Vilas Javdekar Developers</span><span class="reveal">Mantra Properties</span><span class="reveal">Majestique Landmarks</span><span class="reveal">Kohinoor Group</span><span class="reveal">Shapoorji Pallonji Real Estate</span><span class="reveal">Goel Ganga Group</span><span class="reveal">Nyati Group</span><span class="reveal">Supreme Developers</span><span class="reveal">Kumar Properties</span><span class="reveal">Birla Estates</span><span class="reveal">Pristine Developers</span><span class="reveal">Pristine Properties</span><span class="reveal">Kolte Patil Developers</span><span class="reveal">Krisala Developers</span><span class="reveal">Rohan Builders</span><span class="reveal">Pride Group</span><span class="reveal">VTP Realty</span><span class="reveal">Brahma Corp</span><span class="reveal">Adani Realty</span><span class="reveal">K Raheja Corp</span></div>
+</div></section>
+
+<section class="sec tight" id="areas"><div class="wrap">
+ <div class="sec-head reveal"><div><div class="eyebrow">Working areas</div><h2>Based in Kharadi. <b>Working across Pune.</b></h2></div>
+ <p>Our office is near EON IT Park, and our team covers 29 locations across East, Central and West Pune, including PCMC.</p></div>
+ <div class="areas"><div class="reveal"><h4>East Pune</h4><div class="chips2"><span>Kharadi</span><span>Upper Kharadi</span><span>Kalyani Nagar</span><span>Viman Nagar</span><span>Koregaon Park</span><span>Wadgaon Sheri</span><span>Hadapsar</span><span>Mundhwa</span><span>Keshav Nagar</span><span>Wagholi</span><span>Manjari</span><span>Dhanori</span><span>Charholi</span><span>NIBM</span></div></div><div class="reveal"><h4>Central & West Pune</h4><div class="chips2"><span>Kothrud</span><span>Shivaji Nagar</span><span>Camp</span><span>Baner</span><span>Balewadi</span><span>Wakad</span><span>Hinjewadi</span><span>Mahalunge</span><span>Bavdhan</span><span>Pashan</span><span>Punawale</span><span>Tathawade</span><span>Ravet</span><span>Kiwale</span><span>PCMC</span></div></div></div>
+</div></section>
+<section class="band"><div class="wrap"><h2>Let's talk about <b>your next property.</b></h2><a class="btn dark" href="contact.html#book">Book a site visit <svg width="16" height="10" viewBox="0 0 16 10" fill="none" aria-hidden="true"><path d="M0 5h15M11 1l4 4-4 4" stroke="currentColor" stroke-width="1.3"/></svg></a></div></section>
 </main><footer><div class="wrap">
-  <div><a href="index.html" aria-label="NSu Ventures Pvt Ltd, home"><img class="fwm" src="assets/logo-wordtag.png" alt="NSu Ventures Pvt Ltd: Residential, Commercial, Pre-leased" width="900" height="123"></a>
-  <p class="about">Your Vision, Our Expertise. Residential, commercial and pre-leased property across Pune, from shortlist to registration.</p>
-  <div class="social"><a href="https://www.instagram.com/nsuventures/" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg> Instagram</a><a href="https://wa.me/919503599600" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg> WhatsApp</a></div></div>
-  <div><h5>Explore</h5><ul><li><a href="about.html">About us</a></li><li><a href="properties.html">Projects</a></li><li><a href="pre-leased.html">Pre-leased investments</a></li><li><a href="contact.html">Contact</a></li><li><a href="contact.html#book">Book appointment</a></li></ul></div>
-  <div><h5>Markets</h5><ul><li>Kharadi</li><li>Viman Nagar</li><li>Wagholi</li><li>Koregaon Park</li><li>Hadapsar</li></ul></div>
-  <div><h5>Office</h5><ul><li>Office No. 303, Gera's Imperium Alpha, Grant Road, near EON IT Park, Kharadi, Pune 411014</li><li>+91 95035 99600</li><li>+91 84849 00467</li><li>contact@nsuventures.in</li></ul></div>
-  <div class="legal"><span>© 2026 NSu Ventures Pvt. Ltd. (formerly NS Ventures). All rights reserved.</span><span>Project details are indicative and subject to change by the respective developers.</span></div>
+  <div><a href="index.html" aria-label="NSu Ventures Pvt Ltd, home"><img class="fwm" src="assets/nl-full.png" alt="NSu Ventures Pvt Ltd: Residential, Commercial, Pre-leased" width="700" height="545"></a>
+  <p class="about">Your Vision, Our Expertise. Real estate marketing professionals helping families and investors across Pune buy with confidence.</p>
+  <div class="social"><a href="https://www.instagram.com/nsuventures/" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg> Instagram</a><button type="button" class="wa-open" style="all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line-2);padding:9px 14px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);border-radius:8px"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg> WhatsApp</button></div></div>
+  <div><h5>Explore</h5><ul><li><a href="about.html">About us</a></li><li><a href="properties.html">Projects</a></li><li><a href="pre-leased.html">Pre-leased investments</a></li><li><a href="about.html#network">Our network</a></li><li><a href="contact.html#book">Book a site visit</a></li></ul></div>
+  <div><h5>Services</h5><ul><li>Property advisory</li><li>Home loan assistance</li><li>Interior design & décor</li><li>Investment guidance</li></ul></div>
+  <div><h5>Office</h5><ul><li>Office No. 303, Gera's Imperium Alpha, Grant Road, near EON IT Park, Kharadi, Pune 411014</li><li>+91 95035 99600</li><li>+91 84849 00467</li><li>contact@nsuventures.in</li><li>Tue – Sun, 10 am – 7 pm<br>Monday weekly off</li></ul></div>
+  <div class="legal"><span>© 2026 NSu Ventures Pvt. Ltd. (formerly NS Ventures). All rights reserved.</span><span>Project names, images and details belong to the respective developers.</span></div>
 </div></footer>
-<a class="wa" href="https://wa.me/919503599600?text=Hi%20NSu%20Ventures%2C%20I%27d%20like%20to%20know%20more%20about%20your%20properties." target="_blank" rel="noopener"><i><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 18.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg></i><span>WhatsApp us</span></a><script>
+<button type="button" class="wa wa-open" aria-haspopup="dialog" aria-expanded="false"><i><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 18.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg></i><span>WhatsApp us</span></button>
+<div class="wam" id="wam" role="dialog" aria-label="Choose a WhatsApp number" hidden>
+  <button class="x2" type="button" id="wam-x" aria-label="Close"><svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M1 1l14 14M15 1L1 15" stroke="currentColor" stroke-width="1.6"/></svg></button>
+  <p>Chat on WhatsApp</p>
+  <a id="wa-1" href="https://wa.me/919503599600" target="_blank" rel="noopener"><i><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg></i><span>+91 95035 99600<small>Tap to chat on WhatsApp</small></span></a>
+  <a id="wa-2" href="https://wa.me/918484900467" target="_blank" rel="noopener"><i><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg></i><span>+91 84849 00467<small>Tap to chat on WhatsApp</small></span></a>
+</div><script>
 (function(){
   var $=function(s,c){return (c||document).querySelector(s)},$$=function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
   function store(k,v){try{if(v===undefined)return sessionStorage.getItem(k);if(v===null)sessionStorage.removeItem(k);else sessionStorage.setItem(k,v)}catch(e){return null}}
@@ -613,7 +715,7 @@ form.lead button[disabled]{opacity:.6;cursor:wait}
   addEventListener('keydown',function(e){if(e.key==='Escape'&&dr.classList.contains('open'))setDrawer(false)});
 
   // ticker
-  var tk=$('#ticker');if(tk){var t=['Residential','Kharadi','Commercial','Viman Nagar','Pre-leased','Wagholi','NRI desk','Koregaon Park','Hadapsar'];var h=t.map(function(x){return '<span>'+x.toUpperCase()+'</span>'}).join('');tk.innerHTML=h+h}
+  var tk=$('#ticker');if(tk){var t=["Panchshil Realty", "Tribeca Developers", "Hiranandani Group", "Kalpataru Group", "Lodha Developers", "Puravankara", "Godrej Properties", "Mahindra Lifespaces", "Gera Developments", "Vilas Javdekar Developers", "Mantra Properties", "Majestique Landmarks", "Kohinoor Group", "Shapoorji Pallonji Real Estate", "Goel Ganga Group", "Nyati Group", "Supreme Developers", "Kumar Properties", "Birla Estates", "Pristine Developers", "Pristine Properties", "Kolte Patil Developers", "Krisala Developers", "Rohan Builders", "Pride Group", "VTP Realty", "Brahma Corp", "Adani Realty", "K Raheja Corp"];var h=t.map(function(x){return '<span>'+x.toUpperCase()+'</span>'}).join('');tk.innerHTML=h+h}
 
   // art
   function rnd(s){return function(){s=(s*9301+49297)%233280;return s/233280}}
@@ -663,87 +765,73 @@ form.lead button[disabled]{opacity:.6;cursor:wait}
   var pa=$('#pre-art');if(pa)pa.innerHTML=art({t:'pre',seed:9},500,400);
 
   // data (illustrative)
-  var P=[
-    {id:'panchshil-towers',t:'res',n:'Panchshil Towers',dv:'Panchshil Realty',l:'Kharadi',area:'Vitthal Nagar, Kharadi',cfg:[3,4,5],s:[['Config','3 – 5 BHK'],['Area','2,293 – 8,210 sq ft'],['Type','Luxury']],seed:3,feat:1,
-      d:'Landmark high-rise residences with duplexes, simplexes and penthouses, a short drive from EON IT Park.',
-      tb:[['Configuration','3, 3.5, 4 & 5 BHK'],['Area','2,293 – 8,210 sq ft'],['Formats','Duplexes, simplexes, penthouses']],hl:['Penthouses','Skyline views','Nagar Road access']},
-    {id:'marvel-aquanas',t:'res',n:'Marvel Aquanas',dv:'Marvel Realtors',l:'Kharadi',area:'Kharadi Annexe',cfg:[3,4,5],s:[['Config','3.5 – 5 BHK'],['Area','2,961 – 11,600 sq ft'],['Type','Luxury']],seed:5,feat:1,
-      d:'Large-format luxury apartments and penthouses in Kharadi Annexe.',
-      tb:[['Configuration','3.5, 4.5 & 5 BHK, penthouses'],['Area','2,961 – 11,600 sq ft'],['Location','Kharadi Annexe']],hl:['Penthouses','Large formats','Riverside micro-market']},
-    {id:'flamante',t:'res',n:'Flamante by VTP Luxe',dv:'VTP Realty',l:'Kharadi',area:'Kharadi',cfg:[2,3],s:[['Config','2 & 3 BHK'],['Carpet','677 – 1,129 sq ft'],['Possession','Jun 2029']],seed:7,feat:1,
-      d:'Phase 2 of VTP Luxe\'s Kharadi project, with compact and family-sized 2 and 3 BHK homes.',
-      tb:[['Configuration','2 & 3 BHK'],['Carpet area','677 – 1,129 sq ft'],['Possession','June 2029 (phase 2)']],hl:['New phase','2 & 3 BHK','Kharadi']},
-    {id:'tuscan-estate',t:'res',n:'Tuscan Estate',dv:'Kolte Patil Developers',l:'Kharadi',area:'Rakshak Nagar, Kharadi',cfg:[3,4],s:[['Config','3 & 4 BHK'],['Area','1,970 – 2,595 sq ft'],['Type','Premium']],seed:11,feat:1,
-      d:'A gated, low-density premium community in Rakshak Nagar with Tuscan-inspired architecture.',
-      tb:[['Configuration','3 & 4 BHK'],['Area','1,970 – 2,595 sq ft'],['Location','Rakshak Nagar, Kharadi']],hl:['Gated community','Premium homes']},
-    {id:'24k-giga',t:'res',n:'24K Giga',dv:'Kolte Patil Developers',l:'Nagar Road',area:'Nagar Road, Kharadi',cfg:[3,4],s:[['Config','3 & 4 BHK, PH'],['Area','2,802 – 7,095 sq ft'],['Type','Ultra-luxury']],seed:13,feat:1,
-      d:'Kolte Patil\'s ultra-luxury 24K brand on Nagar Road, with large residences and penthouses.',
-      tb:[['Configuration','3 & 4 BHK, penthouses'],['Area','2,802 – 7,095 sq ft'],['Location','Nagar Road, Kharadi']],hl:['24K luxury brand','Penthouses']},
-    {id:'liviano',t:'res',n:'Liviano',dv:'Darode Jog',l:'Kharadi',area:'Kharadi Annexe',cfg:[2,3,4],s:[['Config','2 – 4 BHK'],['Area','1,374 – 2,883 sq ft'],['Type','Premium']],seed:17,
-      d:'Spacious 2 to 4 BHK homes by Darode Jog in Kharadi Annexe.',
-      tb:[['Configuration','2, 2.5, 3 & 4 BHK'],['Area','1,374 – 2,883 sq ft'],['Location','Kharadi Annexe']],hl:['Wide choice of sizes']},
-    {id:'trinity-towers',t:'res',n:"Gera's Trinity Towers",dv:'Gera Developments',l:'Kharadi',area:'Vitthal Nagar, Kharadi',cfg:[2,3,4],s:[['Config','2 – 4 BHK'],['Area','1,335 – 2,491 sq ft'],['Type','Premium']],seed:19,
-      d:'Premium towers by Gera Developments in Vitthal Nagar, including 4 BHK duplex homes.',
-      tb:[['Configuration','2 & 3 BHK, 4 BHK duplex'],['Area','1,335 – 2,491 sq ft'],['Location','Vitthal Nagar, Kharadi']],hl:['4 BHK duplexes','Gera quality']},
-    {id:'song-of-joy',t:'res',n:"Gera's Song of Joy",dv:'Gera Developments',l:'Kharadi',area:'Kharadi Annexe',cfg:[2,3],s:[['Concept','Child-centric'],['Area','1,080 – 1,670 sq ft'],['Location','Kharadi Annexe']],seed:23,
-      d:'Gera\'s child-centric homes, planned around learning and play spaces for families with children.',
-      tb:[['Concept','Child-centric homes'],['Area','1,080 – 1,670 sq ft'],['Location','Kharadi Annexe']],hl:['Child-centric design','Family community']},
-    {id:'vtp-euphoria',t:'res',n:'VTP Euphoria',dv:'VTP Realty',l:'Upper Kharadi',area:'Upper Kharadi',cfg:[1,2,3],s:[['Config','1 – 3 BHK'],['Carpet','368 – 1,452 sq ft'],['Possession','Dec 2026']],seed:29,
-      d:'A large township-style project in Upper Kharadi, from compact 1 BHK homes to 3 BHK family apartments.',
-      tb:[['Configuration','1, 2 & 3 BHK'],['Carpet area','368 – 1,452 sq ft'],['Possession','December 2026']],hl:['Entry pricing','Township amenities']},
-    {id:'panchshil-soho',t:'com',n:'Panchshil Soho',dv:'Panchshil Realty',l:'Kharadi',area:'Vitthal Nagar, Kharadi',cfg:['c'],s:[['Type','Shops & offices'],['Carpet','500 – 4,000 sq ft'],['Possession','Dec 2025']],seed:31,feat:1,
-      d:'Commercial shops and office spaces by Panchshil in Vitthal Nagar, suited to self-use or leasing.',
-      tb:[['Type','Shops & office space'],['Carpet area','500 – 4,000 sq ft'],['Possession','December 2025']],hl:['Leasing potential','Retail & office']}
-  ];
+  var P=[{"id": "pristine-amore", "t": "res", "n": "Pristine Amore", "dv": "Pristine Properties", "l": "Kalyani Nagar", "area": "Next to DMart, Kalyani Nagar", "img": "amore", "feat": 1, "cfg": [3, 4, 5, "c"], "min": 4.25, "price": "₹4.25 Cr onwards", "s": [["Config", "3 – 5 BHK"], ["Carpet", "1,659 – 3,634 sq ft"], ["Possession", "Dec 2030"]], "d": "A landmark, low-density address of just 276 residences across five 24-storey towers on 4.12 acres, with private lifts in the 2-flats-per-floor towers.", "facts": [["Land parcel", "4.12 acres"], ["Towers", "5 · 24 storeys · 3 basements + ground"], ["Total residences", "276 (low density)"], ["Per floor", "Towers A & B: 4 · Towers C, D & E: 2 with private lift"], ["Parking", "2 cars (3 & 4.5 BHK) · 4 cars (simplex & duplex)"], ["Possession", "Dec 2030"], ["MahaRERA", "PR1261012600653"]], "rows": [["3 BHK", "1,659 – 1,681", "₹4.25 – 4.30 Cr"], ["4.5 BHK", "1,975 – 2,003", "₹5.25 – 5.30 Cr"], ["5 BHK simplex & refuge", "3,247 – 3,634", "₹8.6 – 10 Cr"], ["Ultra-luxury duplex (22nd–23rd floor)", "2,720 – 3,528", "₹8 – 10 Cr"], ["Retail shops (54 units)", "552 – 3,223", "₹25,000 – 30,000 / sq ft"], ["Showrooms", "—", "₹30,000 – 35,000 / sq ft"]], "hl": ["Next to DMart", "Private lifts", "Grand entrance lobby", "Retail shops & showrooms"]}, {"id": "pristine-o2-world", "t": "res", "n": "Pristine O2 World", "dv": "Pristine Properties", "l": "Kharadi", "area": "Kharadi", "img": "o2world", "feat": 1, "cfg": [2, 3, 4], "min": 1.24, "price": "₹1.24 Cr onwards", "s": [["Config", "2 – 4 BHK"], ["Carpet", "811 – 1,688 sq ft"], ["Scale", "~20 acres"]], "d": "A future-ready township of 12 towers, 25 storeys each, spread across about 20 acres in the heart of Kharadi.", "facts": [["Land parcel", "~20 acres"], ["Towers", "12 · 25 storeys each"], ["Booking amount", "₹3,00,000"], ["Offer", "Early booking benefits"]], "rows": [["2 BHK", "811", "₹1.24 Cr onwards"], ["2.5 BHK", "991", "₹1.52 Cr onwards"], ["3 BHK", "1,103", "₹1.69 Cr onwards"], ["3.5 BHK", "1,392", "₹2.13 Cr onwards"], ["4 BHK", "1,688", "₹2.58 Cr onwards"]], "hl": ["Township living", "Lifestyle amenities", "Early booking benefits"]}, {"id": "godrej-ivara", "t": "res", "n": "Godrej Ivara", "dv": "Godrej Properties", "l": "Kharadi", "area": "Kharadi", "img": "ivara", "feat": 1, "cfg": [2, 3, 4], "min": 1.31, "price": "₹1.31 Cr onwards", "s": [["Config", "2 – 4 BHK"], ["Carpet", "730 – 1,581 sq ft"], ["Greens", "~6 acres"]], "d": "11 towers on about 12.8 acres, minutes from EON IT Park and WTC, with one of the largest clubhouses and green spaces in Kharadi.", "facts": [["Land parcel", "~12.8 acres"], ["Towers", "11"], ["Open greens", "~6 acres"], ["Clubhouse", "~1,00,000 sq ft"], ["Business centre", "~20,000 sq ft"], ["Payment plan", "Construction linked (CLP)"], ["Charges", "Floor rise & PLC applicable"]], "rows": [["2 BHK Premium", "730", "₹1.31 Cr*"], ["3 BHK Elite", "889", "₹1.65 Cr*"], ["3 BHK Regal", "975", "₹1.91 Cr*"], ["3 BHK Ultra", "1,105", "₹2.11 Cr*"], ["3 BHK Opulent", "1,234", "₹2.52 Cr*"], ["4 BHK Iconic", "1,581", "₹3.22 Cr*"]], "hl": ["10,000 sq ft gym", "Lagoon-style pool", "Oval sports ground", "Indoor sports arena", "Café & lounge"]}, {"id": "godrej-elaris", "t": "res", "n": "Godrej Elaris", "dv": "Godrej Properties", "l": "Magarpatta – Mundhwa", "area": "Magarpatta – Mundhwa", "img": "elaris", "feat": 0, "cfg": [2, 3, 4], "min": 1.75, "price": "₹1.75 Cr onwards", "s": [["Config", "2 – 4 BHK"], ["Carpet", "915 – 1,935 sq ft"], ["Per floor", "4 homes"]], "d": "A low-density address of 8 towers on 12 acres, with a Four Seasons Garden, a 1-acre urban forest and a 30,000+ sq ft clubhouse.", "facts": [["Land parcel", "12 acres"], ["Towers", "8 (5 open for sale)"], ["Floors", "29 – 36 storeys"], ["Per floor", "4 homes"], ["Clubhouse", "30,000+ sq ft"]], "rows": [["2 BHK", "915", "₹1.75 Cr"], ["3 BHK", "1,166", "₹2.35 Cr"], ["3 BHK", "1,440", "₹2.75 Cr"], ["4 BHK", "1,935", "₹3.80 Cr"]], "hl": ["Four Seasons Garden", "1-acre urban forest", "Infinity pool", "Mini theatre", "Spa & salon"]}, {"id": "godrej-skyline", "t": "res", "n": "Godrej Skyline", "dv": "Godrej Properties", "l": "Koregaon Park", "area": "Koregaon Park Annexe", "img": "skyline", "feat": 1, "cfg": [3, 4], "min": 3.5, "price": "₹3.50 Cr onwards", "s": [["Config", "3 & 4.5 BHK"], ["Carpet", "1,349 – 2,400 sq ft"], ["Per floor", "2 – 3 homes"]], "d": "Four independent towers on 3.75 acres: separate towers for 3 BHK and 4.5 BHK homes, with only 2 or 3 homes per floor.", "facts": [["Land parcel", "3.75 acres"], ["Towers", "4 · B + G + UG + 5P + 29 floors"], ["Density", "3 BHK: 3 per floor · 4.5 BHK: 2 per floor"], ["Parking", "3 BHK: 2 cars · 4.5 BHK: 3 cars (no stack parking)"], ["Pricing", "All-inclusive box price"]], "rows": [["3 BHK (Luxury towers)", "1,349 – 1,363", "₹3.50 Cr onwards"], ["4.5 BHK (Luxury towers)", "1,810", "₹4.84 Cr onwards"], ["3 BHK (Ultra luxury towers)", "1,548 – 1,586", "₹4.25 Cr onwards"], ["4.5 BHK (Ultra luxury towers)", "2,400", "₹6.42 Cr onwards"]], "hl": ["Independent towers", "EV-enabled parking", "40% visitor parking"]}, {"id": "mantra-melange", "t": "res", "n": "Mantra Melange", "dv": "Mantra Properties", "l": "Kharadi", "area": "Kharadi Riverside", "img": "melange", "feat": 0, "cfg": [2, 3], "min": 1.28, "price": "₹1.28 Cr onwards", "s": [["Config", "2 & 3 BHK"], ["Carpet", "843 – 1,177 sq ft"], ["Per floor", "4 homes"]], "d": "A riverside address of 6 towers on 8.75 acres with only 4 homes per floor, bigger spaces and open greens.", "facts": [["Land parcel", "8.75 acres"], ["Towers", "6"], ["Per floor", "4 homes"], ["MahaRERA", "P52100079582"]], "rows": [["2 BHK", "843 – 884", "₹1.28 Cr onwards"], ["3 BHK", "1,098 – 1,177", "₹1.72 Cr onwards"]], "hl": ["Riverside living", "Open greens", "Limited launch inventory"]}, {"id": "mantra-1-residences", "t": "res", "n": "1 Residences by Mantra Burgundy", "dv": "Mantra Properties", "l": "Kharadi", "area": "Kharadi", "img": "burgundy", "feat": 0, "cfg": [3, 4], "min": null, "price": "Price on request", "s": [["Config", "3 & 4 BHK"], ["Carpet", "1,352 – 1,740+ sq ft"], ["Styling", "Manish Malhotra"]], "d": "Three towers of refined luxury, with clubhouse and lobbies styled by Manish Malhotra and a 1-acre Burgundy VIP Club.", "facts": [["Towers", "3"], ["Clubhouse", "Burgundy VIP Club, 1 acre"], ["MahaRERA", "P52100066482 (Mantra Phase 1)"]], "rows": [["3 BHK", "1,352", "On request"], ["3 BHK Ultima", "1,565", "On request"], ["4 BHK", "1,740", "On request"], ["4 BHK Ultima", "Larger format", "On request"]], "hl": ["Common areas styled by Manish Malhotra", "Villasuites & Pentaresidences", "Retail boulevard"]}, {"id": "57-avenue", "t": "res", "n": "57 Avenue", "dv": "Panchshil Realty", "l": "Mundhwa", "area": "Mundhwa", "img": "57avenue", "feat": 1, "cfg": [3, 4], "min": 4.52, "price": "₹4.52 Cr++", "s": [["Config", "3.5 & 4.5 BHK"], ["Carpet", "2,017 – 3,326 sq ft"], ["Towers", "4"]], "d": "Panchshil's new landmark in Mundhwa: 4 towers on 6.5 acres with 3.5 BHK, 4.5 BHK and a limited set of 3 BHK duplex residences.", "facts": [["Land parcel", "6.5 acres"], ["Towers", "4 · 3 basements + 27 floors"], ["Possession", "~4 years"], ["MahaRERA", "PR1260002503013"]], "rows": [["3.5 BHK", "2,017", "₹4.52 Cr++"], ["4.5 BHK", "3,326", "₹7.7 Cr++"], ["3 BHK duplex", "Limited", "On request"]], "hl": ["Panchshil luxury", "Limited duplexes"]}, {"id": "kolte-springshire", "t": "res", "n": "Kolte-Patil Springshire", "dv": "Kolte Patil Developers", "l": "Wagholi", "area": "Wagholi", "img": "springshire", "feat": 0, "cfg": [2, 3], "min": 0.82, "price": "₹82 Lacs onwards", "s": [["Config", "2 & 3 BHK"], ["Carpet", "870 – 1,028 sq ft"], ["Phase", "Final tower"]], "d": "The final tower of Springshire, with spacious balconies and open views at an accessible price point.", "facts": [["Status", "Final tower launch"], ["MahaRERA", "P52100076743"]], "rows": [["2 BHK", "870", "₹82 Lacs*"], ["3 BHK", "1,028", "₹99 Lacs*"]], "hl": ["Spacious balconies", "Scenic views"]}, {"id": "venkatesh-vanaya", "t": "res", "n": "Venkatesh Vanaya", "dv": "Venkatesh Buildcon", "l": "Kharadi", "area": "Near Oxygen Park, Kharadi", "img": "vanaya", "feat": 1, "cfg": [2, 3, 4], "min": 1.14, "price": "₹1.14 Cr onwards", "s": [["Config", "2 – 4 BHK"], ["Carpet", "783 – 1,940 sq ft"], ["Possession", "Dec 2030"]], "d": "Tropical-themed homes across 12 towers on 10 acres near Oxygen Park, with 1.5 acres of indoor and outdoor amenities.", "facts": [["Land parcel", "10 acres"], ["Towers", "12 · 21 storeys"], ["Parking", "3-level basement"], ["Amenities", "1.5 acres"], ["Possession", "Dec 2030 (tentative)"], ["MahaRERA", "PR1261012601304 (Phase 1)"]], "rows": [["2 BHK", "783 – 850", "₹1.14 Cr onwards"], ["3 BHK", "1,115 – 1,200", "₹1.60 Cr onwards"], ["4 BHK", "1,730 – 1,940", "₹2.53 – 2.87 Cr"]], "hl": ["Tropical living", "Phase 1 launch"]}, {"id": "lodha-magnus", "t": "res", "n": "Lodha Magnus", "dv": "Lodha Developers", "l": "Hinjewadi", "area": "Hinjewadi", "img": null, "seed": 37, "feat": 0, "cfg": [3, 4], "min": 2.35, "price": "₹2.35 Cr onwards", "s": [["Config", "3 – 4 BHK"], ["Carpet", "1,388 – 1,942 sq ft"], ["Possession", "From Jul 2027"]], "d": "Large-format homes in Hinjewadi, with near-ready options in Towers 7 and 8 and new 3.5 BHK homes in Tower 9.", "facts": [["Towers 7 & 8", "Possession July 2027"], ["Tower 9", "Possession Dec 2029"]], "rows": [["3 BHK (T7/T8, limited)", "1,388", "₹2.40 Cr"], ["4 BHK (T7/T8)", "1,942", "₹3.22 Cr"], ["3.5 BHK (T9)", "1,467", "₹2.35 Cr"], ["3.5 BHK + servant (T9)", "1,676", "₹2.75 Cr"]], "hl": ["Near-ready inventory", "Hinjewadi IT corridor"]}, {"id": "majestique-towers", "t": "res", "n": "Majestique Towers", "dv": "Majestique Landmarks", "l": "Upper Kharadi", "area": "Upper Kharadi", "img": "mtowers", "feat": 0, "cfg": [2, 3], "min": 1.3, "price": "₹1.30 Cr onwards", "s": [["Config", "2 & 3 BHK"], ["Carpet", "825 – 1,133 sq ft"], ["Possession", "Dec 2030"]], "d": "17 acres of development with 35+ lifestyle amenities and quick access to Viman Nagar, Kalyani Nagar, Koregaon Park and Wagholi.", "facts": [["Land parcel", "17 acres"], ["E Tower", "25 storeys"], ["Amenities", "35+"], ["Possession", "Dec 2030 (as per RERA)"], ["MahaRERA", "P52100053786"], ["Charges", "Floor rise & PLC extra"]], "rows": [["2 BHK", "825", "₹1.30 Cr*"], ["2 BHK", "851", "₹1.34 Cr*"], ["3 BHK", "1,133", "₹1.68 Cr*"]], "hl": ["Dolby Atmos theatre", "Box cricket", "Twin squash courts", "Pool & jacuzzi", "Co-working"]}, {"id": "majestique-evolvus", "t": "res", "n": "Majestique Evolvus", "dv": "Majestique Landmarks", "l": "Kharadi", "area": "Central Kharadi, next to BNY Mellon", "img": "evolvus", "feat": 0, "cfg": [3, 4], "min": 1.84, "price": "₹1.84 Cr onwards", "s": [["Config", "3 & 4 BHK"], ["Carpet", "1,149 – 1,715 sq ft"], ["Possession", "Dec 2029"]], "d": "Luxurious 3 and 4 BHK homes on 10 acres in Central Kharadi, with 70+ amenities and a 27,000 sq ft clubhouse.", "facts": [["Land parcel", "10 acres"], ["Structure", "5-level parking + G + 26 floors"], ["Clubhouse", "~27,000 sq ft"], ["Garden", "~33,400 sq ft"], ["Possession", "Dec 2029 (tentative)"], ["MahaRERA", "P52100054253"], ["Charges", "Floor rise extra"]], "rows": [["3 BHK", "1,149 – 1,174", "₹1.84 – 1.96 Cr"], ["3 BHK", "1,264 – 1,300", "₹2.05 – 2.10 Cr"], ["4 BHK", "1,565 – 1,715", "₹2.65 – 2.85 Cr"]], "hl": ["70+ amenities", "850 m terrace jogging track", "Temple & banquet hall", "Pet park"]}, {"id": "raheja-helios", "t": "res", "n": "Helios at Raheja Galaxy", "dv": "K Raheja Corp", "l": "NIBM", "area": "Raheja Galaxy, NIBM", "img": "helios", "feat": 0, "cfg": [4], "min": 4.33, "price": "₹4.33 Cr onwards", "s": [["Config", "4 BHK + servant"], ["Carpet", "2,625 – 3,112 sq ft"], ["Possession", "Nov 2028"]], "d": "Exclusive 4 BHK homes with servant quarters, only 4 apartments per floor and three sides open.", "facts": [["Structure", "5-level parking + 25 floors"], ["Per floor", "4 apartments, 3 sides open"], ["Possession", "Nov 2028 (RERA)"], ["MahaRERA", "P52100077444"]], "rows": [["4 BHK + servant", "2,625", "₹4.33 Cr onwards"], ["4 BHK + servant", "3,112", "₹5.16 Cr onwards"]], "hl": ["3-side open homes", "Servant quarters"]}, {"id": "birla-punya", "t": "res", "n": "Birla Punya", "dv": "Birla Estates", "l": "Sangamwadi", "area": "Sangamwadi, Central Pune", "img": "punya", "feat": 0, "cfg": [2, 3, 4], "min": 1.86, "price": "₹1.86 Cr onwards", "s": [["Config", "2 – 4 BHK"], ["Carpet", "869 – 1,798 sq ft"], ["Towers", "4"]], "d": "Only 4 towers on 5.7 acres in Central Pune, where every home has uninterrupted views and a 40,000 sq ft clubhouse.", "facts": [["Land parcel", "5.7 acres"], ["Towers", "4"], ["Clubhouse", "40,000 sq ft"], ["Amenities", "40+"], ["MahaRERA", "P52100079533"]], "rows": [["2 BHK", "869 – 907", "₹1.86 – 1.97 Cr"], ["3 BHK", "1,443 – 1,473", "₹3.57 – 3.79 Cr"], ["4 BHK", "1,735 – 1,798", "₹4.35 – 4.85 Cr"]], "hl": ["Uninterrupted views", "Pickleball court", "Indoor badminton", "Pre-launch offers"]}, {"id": "ceratec-greater-kharadi", "t": "res", "n": "Codename Greater Kharadi", "dv": "Ceratec Group", "l": "Greater Kharadi", "area": "Greater Kharadi", "img": null, "seed": 41, "feat": 0, "cfg": [2, 3, 4], "min": 0.7899, "price": "₹78.99 Lacs onwards", "s": [["Config", "2 – 4.5 BHK"], ["Carpet", "717 – 1,850 sq ft"], ["Scale", "26 acres"]], "d": "A 26-acre, 26-tower development marking Ceratec Group's 26-year legacy, from smart 2 BHKs to luxury duplexes.", "facts": [["Land parcel", "26 acres"], ["Towers", "26"]], "rows": [["2 BHK", "717 – 787", "₹78.99 – 91 Lacs"], ["2 BHK Garden", "805 – 1,025", "₹93 Lacs – 1.25 Cr"], ["3 BHK Smart", "858", "₹93.44 Lacs"], ["3 BHK Smart Garden", "1,041", "₹1.19 Cr"], ["3 BHK", "997 – 1,056", "₹1.08 – 1.20 Cr"], ["3 BHK Garden", "1,159 – 1,219", "₹1.41 – 1.49 Cr"], ["4.5 BHK Duplex", "1,344 – 1,850", "₹1.69 – 2.29 Cr"]], "hl": ["Garden homes", "Smart homes", "Luxury duplexes"]}, {"id": "vtp-dolce-vita", "t": "res", "n": "VTP Dolce Vita", "dv": "VTP Realty", "l": "Manjri (New Kharadi)", "area": "Codename Pegasus, New Kharadi", "img": null, "seed": 43, "feat": 0, "cfg": [2, 3], "min": 0.977, "price": "₹97.70 Lacs onwards", "s": [["Config", "2 & 3 BHK"], ["Carpet", "756 – 1,458 sq ft"], ["Possession", "Dec 2027 – Jun 2028"]], "d": "9 towers on 10.5 acres in VTP's Codename Pegasus township, with 3.5 acres of open space.", "facts": [["Land parcel", "10.5 acres"], ["Open space", "3.5 acres"], ["Towers", "9 · 4-level parking + 32 floors"], ["Units", "~1,600"], ["Possession", "Dec 2027 – Jun 2028"], ["Stamp duty", "Township benefit, PMRDA 3%"]], "rows": [["2 BHK", "756", "₹97.70 – 98.40 Lacs"], ["2 BHK", "848 – 859", "₹1.10 – 1.14 Cr"], ["Smart 3 BHK", "852", "₹1.12 – 1.15 Cr"], ["3 BHK", "1,086", "₹1.43 – 1.48 Cr"], ["3 BHK", "1,245", "₹1.67 – 1.70 Cr"], ["3 BHK", "1,458", "₹1.95 – 1.99 Cr"]], "hl": ["Township living", "Lower stamp duty"]}, {"id": "vtp-aurelia", "t": "res", "n": "VTP Aurelia", "dv": "VTP Realty", "l": "Manjri (New Kharadi)", "area": "Codename Pegasus, New Kharadi", "img": null, "seed": 47, "feat": 0, "cfg": [2, 3], "min": 0.9, "price": "₹90 Lacs onwards", "s": [["Config", "2 & 3 BHK"], ["Carpet", "739 – 1,092 sq ft"], ["Possession", "Sep 2030"]], "d": "4 towers on 5 acres in Codename Pegasus, with 8 homes per floor and 36 storeys.", "facts": [["Land parcel", "5 acres"], ["Open space", "~2.5 acres"], ["Towers", "4 (3 open) · 2B + G + P1 + 36 floors"], ["Units", "~800"], ["Possession", "Sep 2030"], ["Stamp duty", "Township benefit, PMRDA 3%"]], "rows": [["2 BHK", "739", "₹90 – 93 Lacs"], ["2 BHK", "768", "₹95 – 97 Lacs"], ["2 BHK", "808", "₹1.00 – 1.02 Cr"], ["3 BHK", "1,008", "₹1.30 – 1.33 Cr"], ["3 BHK", "1,092", "₹1.39 – 1.43 Cr"]], "hl": ["Township living", "Lower stamp duty"]}, {"id": "vtp-altamira", "t": "res", "n": "Altamira by VTP Luxe", "dv": "VTP Realty", "l": "Manjri (New Kharadi)", "area": "Codename Pegasus, New Kharadi", "img": "altamira", "feat": 0, "cfg": [3], "min": 1.58, "price": "₹1.58 Cr onwards", "s": [["Config", "3 BHK"], ["Carpet", "1,106 – 1,447 sq ft"], ["Possession", "Dec 2030"]], "d": "VTP Luxe's 3 BHK residences: 4 towers on 4 acres with 4 to 6 homes per floor.", "facts": [["Land parcel", "4 acres"], ["Open space", "2 acres"], ["Towers", "4 · 4-level parking + 35 floors"], ["Units", "~600"], ["Possession", "Dec 2030"], ["Stamp duty", "Township benefit, PMC 4.5%"], ["MahaRERA", "P52100079807"]], "rows": [["3 BHK", "1,106", "₹1.58 – 1.60 Cr"], ["3 BHK", "1,248", "₹1.84 – 1.88 Cr"], ["3 BHK", "1,447", "₹2.20 – 2.25 Cr"]], "hl": ["VTP Luxe", "Low density"]}, {"id": "vj-palladio", "t": "res", "n": "Palladio Presidential Towers", "dv": "Vilas Javdekar Developers", "l": "Hadapsar", "area": "Hadapsar Central", "img": null, "seed": 53, "feat": 0, "cfg": [2, 3, 4], "min": 1.35, "price": "₹1.35 Cr onwards", "s": [["Config", "2 – 4 Bed"], ["Carpet", "828 – 1,542 sq ft"], ["Location", "Hadapsar"]], "d": "A distinctive collection of 2, 3 and 4 bed \"Presidences\" at Hadapsar Central by Vilas Javdekar Developers.", "facts": [["MahaRERA", "PR1260002502961"]], "rows": [["2 Bed", "828", "₹1.35 – 1.45 Cr"], ["3 Bed", "996 – 1,190", "₹1.65 – 2.20 Cr"], ["4 Bed", "1,532 – 1,542", "₹2.50 – 2.75 Cr"]], "hl": ["Token price offer"]}];
   var label={res:'Residential',com:'Commercial',pre:'Pre-leased'};
-  function card(o){return '<button class="card reveal" data-id="'+o.id+'" aria-label="View '+o.n+'"><div class="img">'+art(o)+'<span class="badge">'+label[o.t]+'</span></div>'+
+  function card(o){var vis=o.img?'<img src="assets/projects/'+o.img+'.jpg" alt="'+o.n+', '+o.area+'" loading="lazy" width="960" height="720">':art({t:o.t==='com'?'com':'res',seed:o.seed||7});
+    return '<button class="card reveal" data-id="'+o.id+'" aria-label="View '+o.n+'"><div class="img">'+vis+'<span class="badge">'+o.l+'</span></div>'+
     '<div class="body"><div class="loc">'+o.area+'</div><h3>'+o.n+'</h3><div class="dev">by '+o.dv+'</div><div class="specs">'+o.s.map(function(s){return '<div>'+s[0]+'<b>'+s[1]+'</b></div>'}).join('')+'</div>'+
-    '<div class="price"><strong>Price on request</strong><span>Details '+'<svg width="14" height="9" viewBox="0 0 16 10" fill="none"><path d="M0 5h15M11 1l4 4-4 4" stroke="currentColor" stroke-width="1.3"/></svg></span></div></div></button>'}
+    '<div class="price"><strong>'+(o.min!==null?'<span class="from">Starting from</span>':'')+o.price+'</strong><span>Details <svg width="14" height="9" viewBox="0 0 16 10" fill="none"><path d="M0 5h15M11 1l4 4-4 4" stroke="currentColor" stroke-width="1.3"/></svg></span></div></div></button>'}
   // modal
   var pm=$('#pm');
   function openP(id){var o=P.filter(function(x){return x.id===id})[0];if(!o||!pm)return;
-    $('#pm-art').innerHTML=art(o,600,450);$('#pm-l').textContent=o.area+' · '+label[o.t];$('#pm-t').textContent=o.n;$('#pm-d').textContent=o.d;
-    $('#pm-tb').innerHTML='<tr><td>Developer</td><td>'+o.dv+'</td></tr>'+o.tb.map(function(r){return '<tr><td>'+r[0]+'</td><td>'+r[1]+'</td></tr>'}).join('')+'<tr><td>Price</td><td style="color:var(--gold-hi)">On request</td></tr>';
+    $('#pm-art').innerHTML=o.img?'<img src="assets/projects/'+o.img+'.jpg" alt="'+o.n+'">':art({t:'res',seed:o.seed||7},600,450);
+    $('#pm-l').textContent=o.area;$('#pm-t').textContent=o.n;$('#pm-dv').textContent='by '+o.dv;$('#pm-dv').className='dev';$('#pm-d').textContent=o.d;
+    $('#pm-typ').innerHTML='<tr><th>Type</th><th>Carpet (sq ft)</th><th>Price</th></tr>'+o.rows.map(function(r){return '<tr><td>'+r[0]+'</td><td>'+r[1]+'</td><td>'+r[2]+'</td></tr>'}).join('');
+    $('#pm-tb').innerHTML=o.facts.map(function(r){return '<tr><td>'+r[0]+'</td><td>'+r[1]+'</td></tr>'}).join('');
     $('#pm-h').innerHTML=o.hl.map(function(x){return '<span>'+x+'</span>'}).join('');
     $('#pm-e').onclick=function(){store('nsu-proj',o.n)};
-    $('#pm-w').href='https://wa.me/919503599600?text='+encodeURIComponent('Hi NSu Ventures, I am interested in '+o.n+' ('+o.area+'). Please share details.');
-    if(pm.showModal)pm.showModal();else pm.setAttribute('open','')}
+    $('#pm-w').onclick=function(ev){ev.stopPropagation();openWA('Hi NSu Ventures, please share the cost sheet and availability for '+o.n+' ('+o.area+').')};
+    if(pm.showModal)pm.showModal();else pm.setAttribute('open','');var dt=$('.det',pm);if(dt)dt.scrollTop=0}
   if(pm){$('#pm-x').addEventListener('click',function(){pm.close()});pm.addEventListener('click',function(e){if(e.target===pm)pm.close()})}
   document.addEventListener('click',function(e){var c=e.target.closest&&e.target.closest('.card');if(c)openP(c.dataset.id)});
 
   // locations
-  var locs=[];P.forEach(function(o){if(locs.indexOf(o.l)<0)locs.push(o.l)});
-  var devs=[];P.forEach(function(o){if(devs.indexOf(o.dv)<0)devs.push(o.dv)});
+  var locs=[];P.forEach(function(o){if(locs.indexOf(o.l)<0)locs.push(o.l)});locs.sort();
   function fillSel(sel,arr){if(!sel)return;arr.forEach(function(v){var op=document.createElement('option');op.textContent=v;op.value=v;sel.appendChild(op)})}
-  fillSel($('#f-loc'),locs);fillSel($('#p-loc'),locs);fillSel($('#p-dev'),devs);
-  var np=$('#n-proj');if(np)np.textContent=P.length;
-  function matchCfg(o,c){if(c==='all')return true;if(c==='c')return o.cfg.indexOf('c')>-1;if(c==='4')return o.cfg.some(function(x){return x>=4});return o.cfg.indexOf(+c)>-1}
+  fillSel($('#f-loc'),locs);fillSel($('#p-loc'),locs);
+  $$('#n-proj,#n-proj2').forEach(function(n){n.textContent=P.length});
+  function matchCfg(o,c){if(c==='all')return true;if(c==='c')return o.cfg.indexOf('c')>-1;if(c==='4')return o.cfg.some(function(x){return typeof x==='number'&&x>=4});return o.cfg.indexOf(+c)>-1}
+  function matchBud(o,b){if(b==='all')return true;if(o.min===null)return true;var r=b.split('-');return o.min>=+r[0]&&o.min<+r[1]}
+  function matchType(o,t){if(t==='all')return true;if(t==='com')return o.cfg.indexOf('c')>-1;return o.t==='res'}
 
   // home
   var fe=$('#featured');if(fe)fe.innerHTML=P.filter(function(o){return o.feat}).map(card).join('');
-  var fd=$('#finder');if(fd)fd.addEventListener('submit',function(e){e.preventDefault();store('nsu-loc',$('#f-loc').value);store('nsu-cfg',$('#f-cfg').value);var t=$('#f-type').value;location.href='properties.html'+(t!=='all'?'#'+t:'')});
+  var fd=$('#finder');if(fd)fd.addEventListener('submit',function(e){e.preventDefault();store('nsu-loc',$('#f-loc').value);store('nsu-cfg',$('#f-cfg').value);store('nsu-bud',$('#f-bud').value);location.href='properties.html'});
 
   // properties
   var grid=$('#grid');
   if(grid){
-    var st={t:'all',loc:store('nsu-loc')||'all',cfg:store('nsu-cfg')||'all',dev:'all'};store('nsu-loc',null);store('nsu-cfg',null);
-    $('#p-loc').value=st.loc;$('#p-cfg').value=st.cfg;
+    var st={t:'all',loc:store('nsu-loc')||'all',cfg:store('nsu-cfg')||'all',bud:store('nsu-bud')||'all',sort:'feat'};store('nsu-loc',null);store('nsu-cfg',null);store('nsu-bud',null);
+    $('#p-loc').value=st.loc;$('#p-cfg').value=st.cfg;$('#p-bud').value=st.bud;
     var tabs=$$('.tab');
     function render(){
-      var list=P.filter(function(o){if(st.t!=='all'&&o.t!==st.t)return false;if(st.loc!=='all'&&o.l!==st.loc)return false;if(st.dev!=='all'&&o.dv!==st.dev)return false;return matchCfg(o,st.cfg)});
+      var list=P.filter(function(o){if(!matchType(o,st.t))return false;if(st.loc!=='all'&&o.l!==st.loc)return false;return matchCfg(o,st.cfg)&&matchBud(o,st.bud)});
+      if(st.sort!=='feat'){list=list.slice().sort(function(a,b){var x=a.min===null?99:a.min,y=b.min===null?99:b.min;return st.sort==='lo'?x-y:y-x})}
+      else{list=list.slice().sort(function(a,b){return (b.feat||0)-(a.feat||0)})}
       $('#count').textContent=list.length+(list.length===1?' project':' projects');
       tabs.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.f===st.t)});
-      if(list.length){grid.innerHTML=list.map(card).join('')}
-      else if(st.t==='pre'){grid.innerHTML='<div class="empty"><p>Pre-leased offices and shops are shared privately because they sell quickly. Tell us your budget and we will send the options available now.</p><a class="btn" href="pre-leased.html">Explore pre-leased</a></div>'}
-      else{grid.innerHTML='<div class="empty"><p>No featured project matches these filters. Tell us what you need and we will shortlist options for you.</p><a class="btn" href="contact.html">Share your requirement</a></div>'}
+      grid.innerHTML=list.length?list.map(card).join(''):'<div class="empty"><p>No listed project matches these filters. Tell us what you need and we will shortlist options for you.</p><a class="btn" href="contact.html">Share your requirement</a></div>';
     }
-    function fromHash(){var h=location.hash.replace('#','');st.t=['res','com','pre'].indexOf(h)>-1?h:'all';render()}
+    function fromHash(){var h=location.hash.replace('#','');if(h==='pre'){location.href='pre-leased.html';return}st.t=['res','com'].indexOf(h)>-1?h:'all';render()}
     tabs.forEach(function(b){b.addEventListener('click',function(){st.t=b.dataset.f;render()})});
     $('#p-loc').addEventListener('change',function(e){st.loc=e.target.value;render()});
     $('#p-cfg').addEventListener('change',function(e){st.cfg=e.target.value;render()});
-    $('#p-dev').addEventListener('change',function(e){st.dev=e.target.value;render()});
+    $('#p-bud').addEventListener('change',function(e){st.bud=e.target.value;render()});
+    $('#p-sort').addEventListener('change',function(e){st.sort=e.target.value;render()});
     addEventListener('hashchange',fromHash);fromHash();
+    var deep=location.hash.replace('#','');P.forEach(function(o){if(o.id===deep)setTimeout(function(){openP(deep)},300)});
   }
+
+  // WhatsApp chooser (two numbers)
+  var wam=$('#wam');
+  function openWA(text){var q=text?'?text='+encodeURIComponent(text):'';$('#wa-1').href='https://wa.me/919503599600'+q;$('#wa-2').href='https://wa.me/918484900467'+q;
+    if(pm&&pm.open){pm.close()}wam.hidden=false;$$('.wa').forEach(function(b){b.setAttribute('aria-expanded','true')});$('#wa-1').focus()}
+  function closeWA(){wam.hidden=true;$$('.wa').forEach(function(b){b.setAttribute('aria-expanded','false')})}
+  window.openWA=openWA;
+  document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('.wa-open,[data-wa]');if(b){e.preventDefault();if(!wam.hidden&&b.classList.contains('wa')){closeWA();return}openWA(b.getAttribute('data-wa')||'Hi NSu Ventures, I would like to know more about your projects.');return}
+    if(!wam.hidden&&!wam.contains(e.target))closeWA()});
+  $('#wam-x').addEventListener('click',closeWA);
+  addEventListener('keydown',function(e){if(e.key==='Escape'&&!wam.hidden)closeWA()});
 
   // calculator
   if($('#c-price')){
@@ -768,17 +856,17 @@ form.lead button[disabled]{opacity:.6;cursor:wait}
     var tE=$('#t-enq'),tB=$('#t-book');
     function showTab(b){tE.setAttribute('aria-selected',!b);tB.setAttribute('aria-selected',b);enq.hidden=b;bk.hidden=!b}
     tE.addEventListener('click',function(){showTab(false)});tB.addEventListener('click',function(){showTab(true)});
-    var sel=$('#b-proj');P.forEach(function(o){var op=document.createElement('option');op.textContent=o.n+' · '+o.area;op.value=o.n;sel.appendChild(op)});
-    ['Pre-leased office or shop','Commercial office space'].forEach(function(v){var op=document.createElement('option');op.textContent=v;sel.appendChild(op)});
-    var d=new Date();d.setDate(d.getDate()+1);if(d.getDay()===0)d.setDate(d.getDate()+1);
+    var sel=$('#b-proj');P.forEach(function(o){var op=document.createElement('option');op.textContent=o.n+' · '+o.l;op.value=o.n;sel.appendChild(op)});
+    ['Pre-leased office or shop','Commercial shop or showroom','Interior design consultation','Home loan consultation'].forEach(function(v){var op=document.createElement('option');op.textContent=v;sel.appendChild(op)});
+    var d=new Date();d.setDate(d.getDate()+1);if(d.getDay()===1)d.setDate(d.getDate()+1);
     var iso=function(x){return x.getFullYear()+'-'+String(x.getMonth()+1).padStart(2,'0')+'-'+String(x.getDate()).padStart(2,'0')};
     $('#b-date').min=iso(new Date());$('#b-date').value=iso(d);
-    var pj=store('nsu-proj');if(pj){sel.value=pj;store('nsu-proj',null);showTab(true)}
+    var pj=store('nsu-proj');if(pj){sel.value=pj;if(sel.value!==pj){var op=document.createElement('option');op.textContent=pj;op.value=pj;sel.appendChild(op);sel.value=pj}store('nsu-proj',null);showTab(true)}
     if(location.hash==='#book')showTab(true);
     addEventListener('hashchange',function(){if(location.hash==='#book'){showTab(true);$('#book').scrollIntoView({behavior:'smooth'})}});
     function submitForm(f){
       f.addEventListener('submit',function(e){e.preventDefault();
-        var req=$$('[required]',f),bad=[];req.forEach(function(x){var b=!x.value.trim()||(x.name==='Mobile'&&x.value.replace(/\D/g,'').length<10);x.classList.toggle('bad',b);if(b)bad.push(x)});
+        var req=$$('[required]',f),bad=[];var dd=$('#b-date',f);if(dd&&dd.value&&new Date(dd.value+'T00:00').getDay()===1){dd.classList.add('bad');var mm=$('.sent',f);mm.hidden=false;mm.className='sent err';mm.textContent='Monday is our weekly off. Please choose a date from Tuesday to Sunday.';dd.focus();return}if(dd)dd.classList.remove('bad');req.forEach(function(x){var b=!x.value.trim()||(x.name==='Mobile'&&x.value.replace(/\D/g,'').length<10);x.classList.toggle('bad',b);if(b)bad.push(x)});
         var msg=$('.sent',f);
         if(bad.length){bad[0].focus();msg.hidden=false;msg.className='sent err';msg.textContent='Please enter your name and a 10-digit mobile number.';return}
         if($('.hp',f).value)return;
